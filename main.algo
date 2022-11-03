@@ -1,0 +1,26 @@
+PROCEDURE dot(v1,v2,VAR ps: INTEGER)
+VAR
+ v1:  ARRAY_OF INTEGER[];
+ V2: ARRAY_OF INTEGER[];
+ i: INTEGER;
+BEGIN
+FOR i FROM 0 TO v1.length  STEP 1  DO
+FOR j FROM 0 TO v2.length  STEP 1  DO
+  ps:= ps+(v1[i]*v2[j])
+END_FOR
+END_FOR
+END
+
+ALGORITHM product_vecteur_algorithm
+VAR
+ ps: FLOAT:=0;
+BEGIN
+ dot(v1,v2,ps)
+ IF (ps=0) THEN
+  write(" two vectors of given IR are orthogonal", ps);
+ END_IF
+ ELSE
+  write(" two vectors of given IR are not orthogonal", ps);
+ END_IF
+END
+
